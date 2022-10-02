@@ -1,17 +1,87 @@
-<ion-header [translucent]="true">
+ <ion-header [translucent]="true" mode="ios" >
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Historial
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" mode="ios" >
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Historial</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+  <ion-list>
+    <ion-item   ion-item *ngFor="let historiales of historial" (click)="abrirHistorial()"  >
+      <ion-icon  color="secondary" slot="start" name="{{historiales.icon}}"></ion-icon>
+
+      <ion-label>
+        <article >{{historiales.content}}
+        </article>
+        <p>{{historiales.created}}</p>
+        
+        <hr />
+      </ion-label>
+     
+    </ion-item>
+  </ion-list>
+
+
+  <!-- <ion-label ion-item *ngFor="let historiales of historial">
+    <h2>{{ historiales.content}}
+      <ion-icon name="{{historiales.icon}}"></ion-icon>
+      
+    </h2>
+</ion-label> -->
+</ion-content> 
+
+
+
+<!-- <ion-content>
+  <ion-list>
+    <ion-item  [historial]="historial">
+
+
+    </ion-item>
+  </ion-list>
+</ion-content> -->
+
+
+<!-- <ion-content [fullscreen]="true">
+  <ion-header collapse="condense" mode="ios">
+    <ion-toolbar>
+      <ion-title size="large">AIEP's News</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-services [historial]="historial"></app-services>
+
+
+</ion-content> -->
+
+
+<!-- 
+<ion-content>
+  <ion-list>
+    <ion-item value="historial" *ngFor="let historial of dataLocal.historial"    >
+      <ion-icon slot="start" [name]="registro.icon" color="primary"></ion-icon>
+      <ion-label>{{historial}}
+
+         <h2>{{ registro.text }}</h2>
+        <p>{{ registro.created | date: "medium" }}</p> 
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content> -->
+
+<!-- <ion-list>
+  <ion-item>
+    <ion-label ion-item *ngFor="let historiales of historial">
+         <h2>{{ historiales.text }}</h2>
+        <p>{{ historiales.created | date: "medium" }}</p>
+    </ion-label>
+
+  </ion-item>
+</ion-list> -->

@@ -40,7 +40,8 @@ export class Tab1Page implements AfterViewInit {
       }
     } else {
       console.log('Corriendo en la web');
-      this.dataLocalService.guardarRegistro('geo','geo:43.374982821480074,-74.18034925898438?q=43.374982821480074,-74.18034925898438');
+      this.dataLocalService.guardarRegistro('http','https://www.google.cl');
+
     }
   }
 

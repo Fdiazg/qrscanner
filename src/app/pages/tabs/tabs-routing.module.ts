@@ -22,7 +22,11 @@ const routes: Routes = [
           {
             path: 'mapa/:geo',
             loadChildren:()=> import('../map/map.module').then(m=> m.MapModule)
-          }
+          },
+          // {
+          //   path: 'web/:http',
+          //   loadChildren:() => import('../web/web.module').then(m=> m.WebModule)
+          // }
         ]
       },
       {
